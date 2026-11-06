@@ -1,0 +1,68 @@
+{
+  "name": "roboparty-mcp",
+  "version": "0.1.9",
+  "description": "Unified RoboParty MCP entry: docs, control and System-1 as namespaced tools.",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "bin": {
+    "roboparty-mcp": "src/index.mjs"
+  },
+  "files": [
+    "dist/",
+    "src/index.mjs",
+    "src/children.mjs",
+    "src/control/",
+    "!src/control/**/__pycache__",
+    "!src/control/**/*.py[cod]",
+    "scripts/fetch-model.mjs",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "start": "node src/index.mjs",
+    "check": "node src/index.mjs --check",
+    "build": "node scripts/build.mjs",
+    "prepack": "npm run build",
+    "test": "npm run typecheck && npm run build && node --test test/*.test.mjs",
+    "sync:upstream": "bash scripts/sync-upstream.sh",
+    "fetch:model": "node scripts/fetch-model.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@receptron/laya": "^0.2.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "undici": "^7.11.0",
+    "zod": "^4.6.7"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Roboparty/roboparty_mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "roboparty",
+    "robotics",
+    "humanoid",
+    "docs",
+    "control"
+  ],
+  "homepage": "https://github.com/Roboparty/roboparty_mcp#readme",
+  "bugs": {
+    "url": "https://github.com/Roboparty/roboparty_mcp/issues"
+  },
+  "author": "RoboParty",
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "typescript": "^5.8.0",
+    "@types/node": "^22.15.0"
+  }
+}

@@ -1,0 +1,19 @@
+# RoboParty MCP server config
+rp_server:
+  ws_url: "wss://127.0.0.1:9000/ws"   # rp_server protobuf WS endpoint
+
+readonly: true           # true = query-only (safe), false = allow motion + control
+
+motion:
+  speed_mps: 0.5       # linear speed at full stick
+  turn_dps: 45.0       # yaw rate at full stick, deg/s
+  # rp_server/inference mapping: RY -> vx, RX -> vy, LT/RT -> yaw.
+  forward_axis: "ry"
+  forward_sign: -1.0   # gamepad Y: up (forward) is negative
+  turn_left_axis: "lt"
+  turn_right_axis: "rt"
+  turn_left_value: -1.0
+  turn_right_value: -1.0
+  max_move_s: 10.0     # safety cap per command
+  max_turn_s: 10.0
+
