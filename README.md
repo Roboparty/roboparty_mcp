@@ -10,8 +10,7 @@
 [![Release](https://img.shields.io/github/v/release/Roboparty/roboparty_mcp?display_name=tag)](https://github.com/Roboparty/roboparty_mcp/releases)
 [![Node](https://img.shields.io/badge/node-%3E%3D20-339933?logo=node.js&logoColor=white)](package.json)
 [![MCP](https://img.shields.io/badge/MCP-stdio-6f42c1)](https://modelcontextprotocol.io)
-[![GitHub Packages](https://img.shields.io/badge/GitHub%20Packages-@roboparty%2Froboparty--mcp-24292f?logo=github)](https://github.com/orgs/Roboparty/packages?repo_name=roboparty_mcp)
-[![npmjs](https://img.shields.io/badge/npmjs-pending-orange)](https://github.com/Roboparty/roboparty_mcp/releases)
+[![npmjs](https://img.shields.io/badge/npmjs-pending-orange)](https://www.npmjs.com/package/roboparty-mcp)
 
 </div>
 
@@ -61,26 +60,17 @@ system1_laya_analyze      → 让 Laya 分析当前局面
 
 ## 安装
 
-### GitHub Packages
+### npm（待发布）
 
 ```bash
-# 需要带 read:packages 权限的 GitHub token
-npm config set @roboparty:registry https://npm.pkg.github.com
-npm login --scope=@roboparty --registry=https://npm.pkg.github.com
-
-npm install -g @roboparty/roboparty-mcp
+npm install -g roboparty-mcp
 ```
 
-也可以直接在 `.npmrc` 中配置：
-
-```ini
-@roboparty:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
-```
+当前公共 npm 源尚未发布，请先用下面的 GitHub Release 安装包。
 
 ### GitHub Release 安装包
 
-如果暂时不使用 GitHub Packages，可以从 Release 下载 `.tgz` 后本地安装：
+如果暂时不使用 npm，可以从 Release 下载 `.tgz` 后本地安装：
 
 ```bash
 gh release download --repo Roboparty/roboparty_mcp \
@@ -99,7 +89,7 @@ npm run build
 node src/index.mjs --check
 ```
 
-> 公共 npm 源发布尚未启用；优先使用 GitHub Packages 或 Release 安装包。
+> 公共 npm 源发布尚未启用；优先使用 Release 安装包。
 
 ## 快速开始
 
@@ -124,7 +114,7 @@ MCP 客户端配置示例：
   "mcpServers": {
     "roboparty": {
       "command": "npx",
-      "args": ["-y", "@roboparty/roboparty-mcp"]
+      "args": ["-y", "roboparty-mcp"]
     }
   }
 }

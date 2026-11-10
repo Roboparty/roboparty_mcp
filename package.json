@@ -32,7 +32,8 @@
     "test": "npm run typecheck && npm run build && node --test test/*.test.mjs",
     "sync:upstream": "bash scripts/sync-upstream.sh",
     "fetch:model": "node scripts/fetch-model.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm test"
   },
   "dependencies": {
     "@receptron/laya": "^0.2.0",

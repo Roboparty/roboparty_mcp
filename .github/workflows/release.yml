@@ -27,7 +27,8 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: node scripts/check-version.mjs "${{ inputs.tag || github.ref_name }}"
       - run: npm ci --ignore-scripts
-      - run: npm run typecheck
+      - run: npm test
+      - run: python3 -m compileall -q src/control/roboparty_mcp
       - run: npm pack
       - uses: softprops/action-gh-release@v2
         with:

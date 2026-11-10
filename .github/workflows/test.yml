@@ -20,9 +20,9 @@ jobs:
           cache: npm
       - name: Install (skip native ONNX download)
         run: npm ci --ignore-scripts
-      - name: Typecheck
-        run: npm run typecheck
-      - name: Build
-        run: npm run build
+      - name: Test
+        run: npm test
+      - name: Check control child syntax
+        run: python3 -m compileall -q src/control/roboparty_mcp
       - name: Pack
         run: npm pack --dry-run
