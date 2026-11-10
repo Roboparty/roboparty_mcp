@@ -7,7 +7,6 @@ src/control/**/__pycache__/
 src/control/**/*.py[cod]
 
 # test and coverage artifacts
-test/
 .coverage
 .coverage.*
 htmlcov/
